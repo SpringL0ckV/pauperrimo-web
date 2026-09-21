@@ -1,0 +1,62 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const ensayos = await getCollection('ensayos');
+  return ensayos.map((ensayo) => ({
+    params: { slug: ensayo.id },
+    props: { ensayo },
+  }));
+}
+
+const { ensayo } = Astro.props;
+const { Content } = await render(ensayo);
+const readingTime = Math.max(1, Math.ceil((ensayo.body ?? '').split(/\s+/).filter(Boolean).length / 220));
+const allEssays = (await getCollection('ensayos')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const currentIndex = allEssays.findIndex((item) => item.id === ensayo.id);
+const newerEssay = currentIndex > 0 ? allEssays[currentIndex - 1] : undefined;
+const olderEssay = currentIndex < allEssays.length - 1 ? allEssays[currentIndex + 1] : undefined;
+---
+
+<BaseLayout title={ensayo.data.title} description={ensayo.data.description}>
+  <div class="article-shell">
+    <nav class="article-nav" aria-label="Navegación del ensayo">
+      <a class="wordmark" href="/">Paupérrimo<span>.</span></a>
+      <a href="/">Volver al archivo <span aria-hidden="true">↗</span></a>
+    </nav>
+    <article class="essay">
+      <header class="essay-header">
+        <div class="tag-row">
+        {ensayo.data.tags.map((tag) => (
+          <span>
+            {tag}
+          </span>
+        ))}
+        </div>
+        <h1>{ensayo.data.title}</h1>
+        <p class="essay-deck">{ensayo.data.description}</p>
+        <div class="essay-meta">
+          <span>{ensayo.data.author}</span>
+          <span>{ensayo.data.pubDate.toLocaleDateString('es-ES')}</span>
+          <span>{readingTime} min de lectura</span>
+        </div>
+      </header>
+
+      <div class="essay-content">
+        <Content />
+      </div>
+      <nav class="essay-pagination" aria-label="Navegar entre ensayos">
+        {olderEssay ? <a href={`/ensayos/${olderEssay.id}`}><small>Ensayo anterior</small><strong>← {olderEssay.data.title}</strong></a> : <span></span>}
+        {newerEssay ? <a class="next-essay" href={`/ensayos/${newerEssay.id}`}><small>Ensayo siguiente</small><strong>{newerEssay.data.title} →</strong></a> : <span></span>}
+      </nav>
+    </article>
+    <footer class="site-footer article-footer">
+      <a href="/">Paupérrimo © 2026</a>
+      <span>Fin de la transmisión.</span>
+      <a href="/">Volver arriba ↑</a>
+    </footer>
+  </div>
+</BaseLayout>
