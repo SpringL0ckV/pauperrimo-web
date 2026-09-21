@@ -6,7 +6,7 @@ author: "Equipo Paupérrimo"
 tags: ["Estética", "Nostalgia", "Tecnología"]
 ---
 
-# El píxel que falta
+## El píxel que falta
 
 La nostalgia no es solo recordar una época. También es recordar una limitación. El sonido comprimido, la textura que se estira en una esquina, el personaje que tiene menos expresiones de las que necesitaría una persona real.
 

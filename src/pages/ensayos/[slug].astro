@@ -21,42 +21,44 @@ const newerEssay = currentIndex > 0 ? allEssays[currentIndex - 1] : undefined;
 const olderEssay = currentIndex < allEssays.length - 1 ? allEssays[currentIndex + 1] : undefined;
 ---
 
-<BaseLayout title={ensayo.data.title} description={ensayo.data.description}>
+<BaseLayout title={ensayo.data.title} description={ensayo.data.description} type="article">
   <div class="article-shell">
     <nav class="article-nav" aria-label="Navegación del ensayo">
       <a class="wordmark" href="/">Paupérrimo<span>.</span></a>
       <a href="/">Volver al archivo <span aria-hidden="true">↗</span></a>
     </nav>
-    <article class="essay">
-      <header class="essay-header">
-        <div class="tag-row">
-        {ensayo.data.tags.map((tag) => (
-          <span>
-            {tag}
-          </span>
-        ))}
-        </div>
-        <h1>{ensayo.data.title}</h1>
-        <p class="essay-deck">{ensayo.data.description}</p>
-        <div class="essay-meta">
-          <span>{ensayo.data.author}</span>
-          <span>{ensayo.data.pubDate.toLocaleDateString('es-ES')}</span>
-          <span>{readingTime} min de lectura</span>
-        </div>
-      </header>
+    <main id="contenido">
+      <article class="essay">
+        <header class="essay-header">
+          <div class="tag-row">
+          {ensayo.data.tags.map((tag) => (
+            <span>
+              {tag}
+            </span>
+          ))}
+          </div>
+          <h1>{ensayo.data.title}</h1>
+          <p class="essay-deck">{ensayo.data.description}</p>
+          <div class="essay-meta">
+            <span>{ensayo.data.author}</span>
+            <time datetime={ensayo.data.pubDate.toISOString()}>{ensayo.data.pubDate.toLocaleDateString('es-ES')}</time>
+            <span>{readingTime} min de lectura</span>
+          </div>
+        </header>
 
-      <div class="essay-content">
-        <Content />
-      </div>
-      <nav class="essay-pagination" aria-label="Navegar entre ensayos">
-        {olderEssay ? <a href={`/ensayos/${olderEssay.id}`}><small>Ensayo anterior</small><strong>← {olderEssay.data.title}</strong></a> : <span></span>}
-        {newerEssay ? <a class="next-essay" href={`/ensayos/${newerEssay.id}`}><small>Ensayo siguiente</small><strong>{newerEssay.data.title} →</strong></a> : <span></span>}
-      </nav>
-    </article>
+        <div class="essay-content">
+          <Content />
+        </div>
+        <nav class="essay-pagination" aria-label="Navegar entre ensayos">
+          {olderEssay ? <a href={`/ensayos/${olderEssay.id}`}><small>Ensayo anterior</small><strong>← {olderEssay.data.title}</strong></a> : <span></span>}
+          {newerEssay ? <a class="next-essay" href={`/ensayos/${newerEssay.id}`}><small>Ensayo siguiente</small><strong>{newerEssay.data.title} →</strong></a> : <span></span>}
+        </nav>
+      </article>
+    </main>
     <footer class="site-footer article-footer">
       <a href="/">Paupérrimo © 2026</a>
       <span>Fin de la transmisión.</span>
-      <a href="/">Volver arriba ↑</a>
+      <a href="#contenido">Volver arriba ↑</a>
     </footer>
   </div>
 </BaseLayout>
