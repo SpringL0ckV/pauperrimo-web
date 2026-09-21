@@ -88,6 +88,15 @@ a { color: inherit; text-decoration: none; }
 .essay-content h2 { color: #fff; font-size: 2rem; font-weight: 400; letter-spacing: -.04em; line-height: 1; margin: 3rem 0 1rem; }
 .essay-content p { margin: 0 0 1.5rem; }
 .essay-content strong { color: var(--acid); font-weight: 500; }
+.support-note { border-top: 1px solid var(--line); margin: 5rem 3rem 0; padding-top: 1.5rem; }
+.support-note .section-kicker { margin-bottom: 1rem; }
+.support-note p:not(.section-kicker) { color: var(--muted); font-family: 'Newsreader', Georgia, serif; font-size: 1.1rem; line-height: 1.5; margin: 0 0 1.5rem; max-width: 560px; }
+.support-main { padding: 8rem 0 10rem; }
+.support-main h1 { color: #fff; font-family: 'Newsreader', Georgia, serif; font-size: clamp(3.5rem, 8vw, 8rem); font-weight: 400; letter-spacing: -.08em; line-height: .85; margin: 2rem 0 7rem; text-shadow: 0 0 5px rgba(255, 255, 255, .6), 0 0 24px rgba(139, 39, 255, .7); }
+.support-main h1 em { color: var(--orange); font-style: normal; }
+.support-grid { display: grid; gap: 5rem; grid-template-columns: 1fr 1fr; }
+.support-button { background: var(--orange); color: var(--ink); display: inline-flex; font-size: .7rem; gap: 1rem; margin-top: 1rem; padding: .9rem 1rem; text-transform: uppercase; }
+.support-button:hover { background: var(--acid); }
 .essay-pagination { border-top: 1px solid var(--line); display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; margin-top: 5rem; padding-top: 1.5rem; }
 .essay-pagination a { display: flex; flex-direction: column; gap: .7rem; }
 .essay-pagination a:hover strong { color: var(--orange); }
@@ -126,11 +135,15 @@ a { color: inherit; text-decoration: none; }
 	.article-shell, .about-shell { padding: 0 1.25rem; }
 	.essay { padding: 5rem 0 6rem; }
 	.essay-content { font-size: 1.2rem; padding: 3rem 0 0; }
+	.support-note { margin: 4rem 0 0; }
 	.essay-pagination { gap: 1rem; }
 	.essay-pagination strong { font-size: 1.1rem; }
 	.about-main { padding: 5rem 0 6rem; }
 	.about-main h1 { margin-bottom: 4rem; }
 	.about-grid { display: block; }
 	.about-copy { margin-top: 3rem; }
+	.support-main { padding: 5rem 0 6rem; }
+	.support-main h1 { margin-bottom: 4rem; }
+	.support-grid { display: block; }
 	.about-principles { margin-top: 5rem; }
 }

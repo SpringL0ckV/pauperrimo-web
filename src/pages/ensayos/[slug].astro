@@ -48,6 +48,11 @@ const olderEssay = currentIndex < allEssays.length - 1 ? allEssays[currentIndex 
       <div class="essay-content">
         <Content />
       </div>
+      <aside class="support-note">
+        <p class="section-kicker"><span>+</span><span>Apoyar el proyecto</span></p>
+        <p>Este ensayo se hizo con tiempo, curiosidad y poco presupuesto. Si te acompañó, puedes ayudar a que sigamos publicando.</p>
+        <a class="text-link" href="https://ko-fi.com/pauperrimo" target="_blank" rel="noopener noreferrer">Invitarnos a un café <span aria-hidden="true">↗</span></a>
+      </aside>
       <nav class="essay-pagination" aria-label="Navegar entre ensayos">
         {olderEssay ? <a href={`/ensayos/${olderEssay.id}`}><small>Ensayo anterior</small><strong>← {olderEssay.data.title}</strong></a> : <span></span>}
         {newerEssay ? <a class="next-essay" href={`/ensayos/${newerEssay.id}`}><small>Ensayo siguiente</small><strong>{newerEssay.data.title} →</strong></a> : <span></span>}
