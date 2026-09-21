@@ -6,7 +6,7 @@ author: "Equipo Paupérrimo"
 tags: ["Videojuegos", "Filosofía"]
 ---
 
-# Perder también cuenta una historia
+## Perder también cuenta una historia
 
 Hay una extraña promesa en los videojuegos: si insistimos lo suficiente, el mundo terminará por obedecernos. Pero antes de la victoria está el error. El salto mal calculado, la ruta que no conocíamos, la pantalla que nos devuelve al principio.
 

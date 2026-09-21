@@ -6,7 +6,7 @@ author: "Equipo Paupérrimo"
 tags: ["Filosofía", "Ludonarrativa"]
 ---
 
-# Pensar con las manos
+## Pensar con las manos
 
 Pensamos que pensar ocurre dentro de la cabeza. Un videojuego complica esa idea: parte del pensamiento se desplaza a los dedos, a la mirada y a la anticipación del siguiente movimiento.
 

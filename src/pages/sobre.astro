@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a class="wordmark" href="/">Paupérrimo<span>.</span></a>
       <a href="/">Volver al archivo <span aria-hidden="true">↗</span></a>
     </nav>
-    <main class="about-main">
+    <main class="about-main" id="contenido">
       <p class="eyebrow"><span></span> Sobre el proyecto</p>
       <h1>No tenemos respuestas.<br /><em>Tenemos mejores preguntas.</em></h1>
       <div class="about-grid">
@@ -24,6 +24,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div><span>03</span><strong>Lo pequeño puede ser radical.</strong></div>
       </div>
     </main>
-    <footer class="site-footer article-footer"><span>Paupérrimo © 2026</span><span>Hecho con curiosidad y poco presupuesto.</span><a href="/">Volver arriba ↑</a></footer>
+    <footer class="site-footer article-footer"><span>Paupérrimo © 2026</span><span>Hecho con curiosidad y poco presupuesto.</span><a href="#contenido">Volver arriba ↑</a></footer>
   </div>
 </BaseLayout>

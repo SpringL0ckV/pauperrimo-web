@@ -6,7 +6,7 @@ author: "Equipo Paupérrimo"
 tags: ["Filosofía", "Videojuegos", "Manifiesto"]
 ---
 
-# El arte del bajo presupuesto y el alto intelecto
+## El arte del bajo presupuesto y el alto intelecto
 
 Bienvenido a **Paupérrimo**. Este proyecto nació como un podcast entre amigos y evoluciona hoy hacia un medio audiovisual enfocado en la cultura pop, la tecnología y el medio interactivo.
 
