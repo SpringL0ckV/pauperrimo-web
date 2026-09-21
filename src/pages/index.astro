@@ -20,6 +20,10 @@ const tags = [...new Set(ensayos.flatMap((ensayo) => ensayo.data.tags))].sort();
         <a href="/sobre">Sobre el proyecto</a>
         <a href="/apoyar">Apoyar</a>
       </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation">
+        <span>Menú</span>
+        <span aria-hidden="true">+</span>
+      </button>
       <span class="issue-label">Vol. 01 / 2026</span>
     </nav>
 
@@ -130,4 +134,12 @@ const tags = [...new Set(ensayos.flatMap((ensayo) => ensayo.data.tags))].sort();
     buttons.forEach((current) => current.classList.toggle('is-active', current === button));
     updateArchive();
   }));
+
+  const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const navigation = document.querySelector<HTMLElement>('.nav-links');
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = navigation?.classList.toggle('is-open') ?? false;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.querySelector('span:last-child')!.textContent = isOpen ? '−' : '+';
+  });
 </script>
