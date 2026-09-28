@@ -1,0 +1,18 @@
+paths:
+  static: public
+  uploads: public/uploads
+timezone: America/Santiago
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+collections_config:
+  pages:
+    path: src/pages
+    icon: wysiwyg
+  source:
+    path: ''
+    icon: package_2
+  ensayos:
+    path: src/content/ensayos
+    icon: enable
