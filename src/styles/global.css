@@ -354,6 +354,13 @@ a { color: inherit; text-decoration: none; }
   padding: 1.4rem 0 2rem;
 }
 .article-shell, .about-shell { margin: 0 auto; max-width: 980px; padding: 0 5vw; }
+.article-shell {
+  background: #fffafc;
+  border-left: 1px solid rgba(255,255,255,0.7);
+  border-right: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 0 0 1px rgba(26, 23, 32, 0.08), 0 24px 60px rgba(18, 16, 28, 0.14);
+  position: relative;
+}
 .article-nav { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 1.4rem 0; }
 .article-nav > a:last-child { color: var(--muted); font-size: .65rem; text-transform: uppercase; }
 .article-nav > a:last-child:hover { color: var(--accent); }
